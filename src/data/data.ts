@@ -13,6 +13,8 @@ export interface Project {
   title: string;
   techStack: string[];
   description: string;
+  problemSolved?: string;
+  contribution?: string;
   githubLink?: string;
   liveLink?: string;
   imageUrl?: string;
@@ -48,6 +50,8 @@ export const projectsData: Project[] = [
     title: "Mini Vercel Deployment Pipeline",
     techStack: ["React", "Node.js", "AWS S3"],
     description: "Architected a custom deployment platform supporting automated frontend builds. Engineered a specialized deployment workflow and storage pipeline leveraging AWS S3 that actively reduces deployment latency for static assets.",
+    problemSolved: "Automates complex frontend deployments by building and hosting projects dynamically with low latency.",
+    contribution: "Designed the server-side build workers and structured the AWS S3 static asset delivery pipeline.",
     githubLink: "https://github.com/karankumar211",
     imageUrl: vercelImg
   },
@@ -56,6 +60,8 @@ export const projectsData: Project[] = [
     title: "Real-Time Code Collab",
     techStack: ["React", "Node.js", "WebSockets", "MongoDB"],
     description: "Developed a secure, multi-user real-time code editing environment. Managed complex state synchronization across clients using WebSockets and enforced session security via strict JWT-based authentication.",
+    problemSolved: "Solves document sync conflicts and lag during concurrent code edits for remote developers.",
+    contribution: "Built the WebSockets collaborative server and integrated secure JWT cookie auth sessions.",
     githubLink: "https://github.com/karankumar211",
     imageUrl: vercelImg
   },
@@ -64,6 +70,8 @@ export const projectsData: Project[] = [
     title: "Native Language Identification",
     techStack: ["NLP", "Python", "Data Analysis"],
     description: "Designed and trained models for language identification, utilizing layer-wise analysis to optimize prediction accuracy across diverse linguistic datasets.",
+    problemSolved: "Enables automated language classification on raw multi-lingual textual documents.",
+    contribution: "Cleaned raw datasets, trained NLP classification models, and tuned accuracy with hyper-parameters.",
     githubLink: "https://github.com/karankumar211/Native-Language-Identification-Project",
     imageUrl: vercelImg
   },
@@ -72,6 +80,8 @@ export const projectsData: Project[] = [
     title: "Zero-Trust Asset Delivery System",
     techStack: ["Docker", "System Design", "Microservices"],
     description: "Initiated the architecture for a highly secure asset delivery system, emphasizing zero-trust boundaries and containerized deployment using Docker to isolate operational environments.",
+    problemSolved: "Secures service-to-service file distribution channels against unauthorized access.",
+    contribution: "Crafted the container isolation setup using Docker and defined service-level boundary controls.",
     imageUrl: vercelImg
   }
 ];
@@ -133,8 +143,8 @@ export const personalInfo = {
   email: "karankumar21143@gmail.com",
   phone: "+91 9154994175",
   github: "https://github.com/karankumar211",
-  linkedin: "https://linkedin.com/in/karankumar211",
-  leetcode: "https://leetcode.com/u/karankumar211/",
-  shortBio: "I am a Software Engineer Passionate about building scalable, high-performance applications and delivering intuitive, user-centric digital experiences through clean, maintainable code.",
-  resumeUrl: "/google Resume.pdf"
+  linkedin: "https://www.linkedin.com/in/karan-kumar-5a36522b5",
+  leetcode: "https://leetcode.com/u/karankumar2114/",
+  shortBio: "Currently pursuing my B.Tech in Computer Science and Engineering at HITAM. I love working with TypeScript, React, and Node.js, and I'm passionate about building scalable, high-performance backend pipelines, real-time collaboration engines, and containerized microservices.",
+  resumeUrl: "/Karan_Kumar_Resume.pdf"
 };

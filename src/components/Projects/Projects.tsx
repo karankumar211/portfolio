@@ -137,6 +137,21 @@ const Projects: React.FC = () => {
                 {project.description}
               </p>
               
+              {(project.problemSolved || project.contribution) && (
+                <div className={styles.detailsList}>
+                  {project.problemSolved && (
+                    <div className={styles.detailItem}>
+                      <span className={styles.detailLabel}>Challenge:</span> {project.problemSolved}
+                    </div>
+                  )}
+                  {project.contribution && (
+                    <div className={styles.detailItem}>
+                      <span className={styles.detailLabel}>Role/Impact:</span> {project.contribution}
+                    </div>
+                  )}
+                </div>
+              )}
+              
               <div className={styles.projectActions}>
                 {project.githubLink ? (
                   <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className={styles.primaryButton}>

@@ -132,6 +132,30 @@
   cursor: not-allowed;
 }
 
+.detailsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto; /* Push actions to the bottom if content size varies slightly */
+  border-top: 1px dashed var(--light);
+  padding-top: 0.75rem;
+}
+
+.detailItem {
+  font-size: 0.85rem;
+  color: var(--dark-secondary);
+  line-height: 1.4;
+}
+
+.detailLabel {
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.5px;
+  margin-right: 0.25rem;
+}
+
 @media (min-width: 768px) {
   .projectCard {
     flex: 0 0 380px; /* wider cards on desktop */
