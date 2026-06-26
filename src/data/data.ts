@@ -57,7 +57,7 @@ export const projectsData: Project[] = [
     techStack: ["React", "Node.js", "WebSockets", "MongoDB"],
     description: "Developed a secure, multi-user real-time code editing environment. Managed complex state synchronization across clients using WebSockets and enforced session security via strict JWT-based authentication.",
     githubLink: "https://github.com/karankumar211",
-     imageUrl: vercelImg
+    imageUrl: vercelImg
   },
   {
     id: "proj-3",
@@ -65,7 +65,7 @@ export const projectsData: Project[] = [
     techStack: ["NLP", "Python", "Data Analysis"],
     description: "Designed and trained models for language identification, utilizing layer-wise analysis to optimize prediction accuracy across diverse linguistic datasets.",
     githubLink: "https://github.com/karankumar211/Native-Language-Identification-Project",
-     imageUrl: vercelImg
+    imageUrl: vercelImg
   },
   {
     id: "proj-4",
@@ -134,7 +134,7 @@ export const personalInfo = {
   phone: "+91 9154994175",
   github: "https://github.com/karankumar211",
   linkedin: "https://linkedin.com/in/karankumar211",
-  leetcode: "https://leetcode.com/u/karankumar211/", 
-  shortBio: "I am a Software Engineer focused on building resilient backend architectures, real-time data pipelines, and clean, type-safe user interfaces.",
+  leetcode: "https://leetcode.com/u/karankumar211/",
+  shortBio: "I am a Software Engineer Passionate about building scalable, high-performance applications and delivering intuitive, user-centric digital experiences through clean, maintainable code.",
   resumeUrl: "/google Resume.pdf"
 };

@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
                 repeat={Infinity}
               />
             </span>{' '}
-            focused on building resilient backend architectures, real-time data pipelines, and clean, type-safe user interfaces.
+            Passionate about building scalable, high-performance applications and delivering intuitive, user-centric digital experiences through clean, maintainable code.
           </p>
           
           <div className={styles.actionsContainer}>
