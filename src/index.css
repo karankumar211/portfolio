@@ -1,0 +1,70 @@
+/* src/index.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+:root {
+  /* Color Palette */
+  --dark: #2B2F42;          /* Deep Navy for main text */
+  --dark-secondary: #1E3A5F;
+  --primary: #2D8CFF;       /* Bright Blue for accents/buttons */
+  --light: #D1D5DB;
+  --light-secondary: #E5E7EB;
+  --extra-light: #F3F4F6;   /* Off-white background */
+  --extra-light-secondary: #ECECEC;
+  --cons: #F06A6A;
+  
+  /* Theme specific backgrounds */
+  --nav-bg: rgba(243, 244, 246, 0.85);
+  --card-bg: #ffffff;
+  
+  /* Typography */
+  --font-main: 'Poppins', sans-serif;
+}
+
+[data-theme="dark"] {
+  --dark: #F3F4F6;          /* Light color for main text */
+  --dark-secondary: #CBD5E1;
+  --primary: #3b82f6;       /* Vibrant Blue */
+  --light: #334155;
+  --light-secondary: #1e293b;
+  --extra-light: #0f172a;   /* Dark slate background */
+  --extra-light-secondary: #1e293b;
+  --cons: #F06A6A;
+  
+  --nav-bg: rgba(15, 23, 42, 0.85);
+  --card-bg: #1e293b;       /* Dark slate card color */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+}
+/* Add this at the top of src/index.css */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px; /* Adjust this based on your navbar height */
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--extra-light);
+  color: var(--dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+h1, h2, h3 {
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+}

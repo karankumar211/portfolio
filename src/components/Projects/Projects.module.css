@@ -1,0 +1,139 @@
+/* src/components/Projects/Projects.module.css */
+
+.projectsSection {
+  padding: 6rem 2rem;
+  width: 100%; 
+}
+
+@media (min-width: 768px) {
+  .projectsSection {
+    padding: 6rem 4rem; 
+  }
+}
+
+.sectionTitle {
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 3rem;
+  border-bottom: 4px solid var(--dark);
+  padding-bottom: 1rem;
+  display: inline-block;
+}
+.projectList {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 2rem;
+  padding: 1rem 0.5rem 2.5rem 0.5rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+}
+
+.projectList::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projectList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.projectList::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 20px;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column; 
+  border: 2px solid var(--dark);
+  background-color: var(--card-bg);
+  flex: 0 0 280px; /* fixed size cards on mobile */
+  border-radius: 16px; 
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Tighter Text Section */
+.projectContent {
+  padding: 1.5rem; 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-grow: 1; 
+}
+
+.projectTitle {
+  font-size: 1.5rem; 
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.2;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Smoothed Tech Stack Pills */
+.techItem {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--dark);
+  background-color: var(--extra-light);
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--light);
+  border-radius: 100px; 
+}
+
+.projectDescription {
+  font-size: 1rem; 
+  color: var(--dark-secondary);
+}
+
+.projectActions {
+  margin-top: auto; 
+  display: flex;
+}
+
+/* Smoothed Button */
+.primaryButton {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  background-color: var(--primary);
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid var(--primary);
+  text-align: center;
+  transition: all 0.2s ease;
+  border-radius: 8px; 
+}
+
+.primaryButton:hover {
+  background-color: transparent;
+  color: var(--primary);
+}
+
+.inProgressButton {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  background-color: var(--light-secondary);
+  color: var(--dark-secondary);
+  font-weight: 600;
+  border: 2px solid var(--light);
+  text-align: center;
+  border-radius: 8px;
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+@media (min-width: 768px) {
+  .projectCard {
+    flex: 0 0 380px; /* wider cards on desktop */
+  }
+}

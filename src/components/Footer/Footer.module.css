@@ -1,0 +1,137 @@
+.footerSection {
+  padding: 4rem 2rem 2rem 2rem;
+  background-color: var(--extra-light-secondary);
+  border-top: 2px solid var(--dark);
+  width: 100%;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.footerContainer {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--dark);
+  transition: border-color 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .footerContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.leftContent {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .leftContent {
+    justify-content: flex-start;
+  }
+}
+
+.thankYouBlock {
+  background-color: var(--card-bg);
+  border: 2px solid var(--dark);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 4px 4px 0 var(--dark);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  width: 100%;
+  max-width: 480px;
+  text-align: left;
+}
+
+.thankYouBlock:hover {
+  transform: translateY(-4px);
+  box-shadow: 8px 8px 0 var(--dark);
+}
+
+.accentTag {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #ffffff;
+  background-color: var(--primary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  letter-spacing: 1px;
+}
+
+.thankYouHeading {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--dark);
+  line-height: 1.25;
+  transition: color 0.3s ease;
+}
+
+.highlightText {
+  color: var(--primary);
+}
+
+.rightContent {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .rightContent {
+    align-items: flex-end;
+  }
+}
+
+.linksTitle {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--dark);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .footerLinks {
+    align-items: flex-end;
+  }
+}
+
+.footerLink {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--dark-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footerLink:hover {
+  color: var(--primary);
+}
+
+.footerBottom {
+  max-width: 1100px;
+  margin: 1.5rem auto 0 auto;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--dark-secondary);
+  transition: color 0.3s ease;
+}
