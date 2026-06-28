@@ -137,6 +137,20 @@ export const skillsData: SkillCategory[] = [
   }
 ];
 
+export interface StatItem {
+  value: number;
+  suffix?: string;
+  label: string;
+  decimals?: number;
+}
+
+export const statsData: StatItem[] = [
+  { value: 250, suffix: "+", label: "DSA Problems" },
+  { value: 8.5, suffix: "", label: "CGPA / 10", decimals: 1 },
+  { value: 4, suffix: "", label: "Projects Shipped" },
+  { value: 3, suffix: "", label: "Hackathon Finals" }
+];
+
 export const personalInfo = {
   name: "Karan Kumar",
   title: "Software Engineer",
