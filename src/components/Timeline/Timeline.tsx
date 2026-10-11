@@ -1,56 +1,83 @@
-import React, { useEffect, useRef } from 'react';
+// src/components/Timeline/Timeline.tsx
+import React from 'react';
 import styles from './Timeline.module.css';
 import { experienceData } from '../../data/data';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import { FaBriefcase, FaMicrochip, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Timeline: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const items = container.querySelectorAll(`.${styles.timelineItem}`);
-    
-    gsap.fromTo(items,
-      { opacity: 0, x: -45 },
-      {
-        opacity: 1,
-        x: 0,
-        stagger: 0.2,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: container,
-          start: "top 85%",
-          toggleActions: "play none none none"
-        }
-      }
-    );
-  }, []);
-
   return (
-    <section className={styles.timelineSection} id="experience">
-      <h2 className={styles.sectionTitle}>experience.</h2>
-      
-      <div className={styles.timelineContainer} ref={containerRef}>
-        {experienceData.map((item) => (
-          <article key={item.id} className={styles.timelineItem}>
-            <h3 className={styles.role}>{item.role}</h3>
-            
-            <div className={styles.companyInfo}>
-              <span className={styles.company}>{item.company}</span>
-              <span className={styles.duration}>{item.duration}</span>
-            </div>
-            
-            <p className={styles.description}>
-              {item.description}
-            </p>
-          </article>
-        ))}
+    <section className="section" id="experience">
+      <div className="container">
+        {/* Section Header */}
+        <div className="section-header">
+          <span className="section-eyebrow">Experience</span>
+          <h2 className="section-title">Experience &amp; research</h2>
+          <p className="section-subtitle">
+            Professional frontend development delivering web features and UI systems, alongside institutional deep learning speech research.
+          </p>
+        </div>
+
+        {/* Experience Cards Stack */}
+        <div className={styles.experienceStack}>
+          {experienceData.map((exp) => (
+            <article key={exp.id} className={styles.experienceCard}>
+              {/* Card Header */}
+              <div className={styles.cardHeader}>
+                <div className={styles.roleInfo}>
+                  <div className={styles.roleTypeBadge}>
+                    {exp.type === 'Work' ? (
+                      <>
+                        <FaBriefcase className={styles.badgeIcon} />
+                        <span>Professional Experience</span>
+                      </>
+                    ) : (
+                      <>
+                        <FaMicrochip className={styles.badgeIcon} />
+                        <span>Academic Research</span>
+                      </>
+                    )}
+                  </div>
+                  <h3 className={styles.roleTitle}>{exp.role}</h3>
+                  <h4 className={styles.organization}>{exp.organization}</h4>
+                </div>
+
+                <div className={styles.metaInfo}>
+                  <span className={styles.metaBadge}>
+                    <FaCalendarAlt className={styles.metaIcon} />
+                    {exp.duration}
+                  </span>
+                  <span className={styles.metaBadge}>
+                    <FaMapMarkerAlt className={styles.metaIcon} />
+                    {exp.location}
+                  </span>
+                </div>
+              </div>
+
+              {/* Summary */}
+              <p className={styles.summaryText}>{exp.summary}</p>
+
+              {/* Specific Bullet Points */}
+              <div className={styles.bulletsContainer}>
+                <ul className={styles.bulletList}>
+                  {exp.points.map((pt, index) => (
+                    <li key={index} className={styles.bulletItem}>
+                      {pt}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Tech Badges */}
+              <div className={styles.techStack}>
+                {exp.technologies.map((tech) => (
+                  <span key={tech} className={styles.techBadge}>
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

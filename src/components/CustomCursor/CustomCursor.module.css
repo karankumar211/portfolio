@@ -1,45 +1,61 @@
+/* src/components/CustomCursor/CustomCursor.module.css */
+
+.cursorContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: normal;
+}
+
+@media (hover: none) or (pointer: coarse) {
+  .cursorContainer {
+    display: none !important;
+  }
+}
+
 .cursorDot {
   position: fixed;
   top: 0;
   left: 0;
-  width: 8px;
-  height: 8px;
-  background-color: var(--primary);
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-primary);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 999999; /* topmost layer */
-  box-shadow: 0 0 8px var(--primary);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  will-change: transform;
 }
 
 .cursorRing {
   position: fixed;
   top: 0;
   left: 0;
-  width: 28px;
-  height: 28px;
-  border: 1.5px solid var(--primary);
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(79, 140, 255, 0.55);
+  background-color: rgba(79, 140, 255, 0.03);
   border-radius: 50%;
   pointer-events: none;
-  z-index: 999998; /* just below the dot */
-  transition: border-color 0.3s ease, border-width 0.2s ease, background-color 0.3s ease;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.25s ease, border-color 0.2s ease, background-color 0.2s ease;
+  will-change: transform, width, height;
 }
 
-/* Hide native cursor on desktop viewports to prioritize custom cursor */
-@media (pointer: fine) {
-  :global(body) {
-    cursor: none;
-  }
-  
-  :global(a), :global(button), :global([role="button"]), :global(input), :global(textarea) {
-    cursor: none;
-  }
+/* Hover state on clickable elements */
+.ringHover {
+  border-color: var(--color-primary) !important;
+  background-color: rgba(79, 140, 255, 0.1) !important;
 }
 
-.sparkle {
-  position: fixed;
-  pointer-events: none;
-  z-index: 999999;
-  transform: translate(-50%, -50%) scale(0);
-  clip-path: polygon(50% 0%, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0% 50%, 38% 38%);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+/* Active click state */
+.ringActive {
+  border-color: var(--color-primary-strong) !important;
+  background-color: rgba(79, 140, 255, 0.18) !important;
 }

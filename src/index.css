@@ -1,70 +1,196 @@
-/* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+/* src/index.css — Portfolio Design System Tokens per design.md */
 
 :root {
-  /* Color Palette */
-  --dark: #2B2F42;          /* Deep Navy for main text */
-  --dark-secondary: #1E3A5F;
-  --primary: #2D8CFF;       /* Bright Blue for accents/buttons */
-  --light: #D1D5DB;
-  --light-secondary: #E5E7EB;
-  --extra-light: #F3F4F6;   /* Off-white background */
-  --extra-light-secondary: #ECECEC;
-  --cons: #F06A6A;
-  
-  /* Theme specific backgrounds */
-  --nav-bg: rgba(243, 244, 246, 0.85);
-  --card-bg: #ffffff;
-  
+  color-scheme: dark;
+
   /* Typography */
-  --font-main: 'Poppins', sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Menlo, Monaco, Consolas, ui-monospace, monospace;
+
+  /* Dark Theme Tokens (Section 3 of design.md) */
+  --color-bg: #0b0d12;
+  --color-surface: #141821;
+  --color-surface-raised: #1a1f2a;
+  --color-border: #2a303c;
+  --color-border-subtle: #1e2430;
+  --color-text: #e8eaf0;
+  --color-text-secondary: #c3c9d4;
+  --color-text-muted: #8b95a7;
+  --color-primary: #4f8cff;
+  --color-primary-hover: #3f79e8;
+  --color-primary-strong: #356fe0;
+  --color-secondary: #66c9be;
+  --color-focus: #93c5fd;
+  --color-success: #34d399;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
+
+  /* Header & Navigation */
+  --header-bg: rgba(11, 13, 18, 0.9);
+  --header-border: #2a303c;
+
+  /* Layout */
+  --container-max: 74rem;
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+
+  /* Spacing Scale (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Shape - Rectangular / soft rounding, strictly NO pills */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-card: 14px;
+  --radius-panel: 16px;
+
+  /* Restrained Motion */
+  --duration-fast: 140ms;
+  --duration-normal: 180ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --shadow-card: 0 4px 16px -2px rgba(0, 0, 0, 0.35);
+  --shadow-hover: 0 8px 24px -4px rgba(0, 0, 0, 0.45);
 }
 
-[data-theme="dark"] {
-  --dark: #F3F4F6;          /* Light color for main text */
-  --dark-secondary: #CBD5E1;
-  --primary: #3b82f6;       /* Vibrant Blue */
-  --light: #334155;
-  --light-secondary: #1e293b;
-  --extra-light: #0f172a;   /* Dark slate background */
-  --extra-light-secondary: #1e293b;
-  --cons: #F06A6A;
-  
-  --nav-bg: rgba(15, 23, 42, 0.85);
-  --card-bg: #1e293b;       /* Dark slate card color */
+[data-theme="light"] {
+  color-scheme: light;
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-raised: #f1f5f9;
+  --color-border: #e2e8f0;
+  --color-border-subtle: #cbd5e1;
+  --color-text: #0f172a;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748b;
+  --color-primary: #2563eb;
+  --color-primary-hover: #1d4ed8;
+  --color-primary-strong: #1e40af;
+  --color-secondary: #0f766e;
+  --color-focus: #1d4ed8;
+
+  --header-bg: rgba(248, 250, 252, 0.9);
+  --header-border: #e2e8f0;
+  --shadow-card: 0 4px 16px -2px rgba(15, 23, 42, 0.08);
+  --shadow-hover: 0 8px 20px -4px rgba(15, 23, 42, 0.12);
 }
 
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  user-select: none;
-  -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
 }
-/* Add this at the top of src/index.css */
+
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 100px; /* Adjust this based on your navbar height */
+  scroll-padding-top: 5rem;
 }
 
 body {
-  font-family: var(--font-main);
-  background-color: var(--extra-light);
-  color: var(--dark);
-  line-height: 1.6;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color var(--duration-normal) var(--ease-standard),
+              color var(--duration-normal) var(--ease-standard);
+  overflow-x: hidden;
 }
 
-h1, h2, h3 {
-  font-weight: 800;
+/* Accessible focus ring */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-weight: 700;
   line-height: 1.2;
 }
 
+p {
+  color: var(--color-text-secondary);
+}
+
 a {
-  color: var(--primary);
+  color: var(--color-primary);
   text-decoration: none;
+  transition: color var(--duration-fast) var(--ease-standard);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+code, pre {
+  font-family: var(--font-mono);
+}
+
+/* Shared page container */
+.container {
+  width: min(100% - 2.5rem, var(--container-max));
+  margin-inline: auto;
+}
+
+/* Standard Section Layout */
+.section {
+  padding-block: clamp(4rem, 8vw, 6.5rem);
+  scroll-margin-top: 5rem;
+}
+
+.section-header {
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.section-eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
   font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.section-subtitle {
+  margin-top: var(--space-2);
+  font-size: clamp(0.95rem, 1.6vw, 1.0625rem);
+  color: var(--color-text-secondary);
+  max-width: 44rem;
+  line-height: 1.6;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
